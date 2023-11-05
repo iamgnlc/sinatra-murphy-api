@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "app/main.rb",
+      "use": "@vercel/ruby"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app/main.rb"
+    }
+  ]
+}
