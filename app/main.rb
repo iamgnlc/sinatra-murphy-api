@@ -1,18 +1,24 @@
 require 'sinatra'
+
 require_relative './utils/load_data'
+require_relative './utils/validate'
 
 def show_laws(number)
   data = load_data()
   data.sample(number).to_json
 end
 
-def validate(number)
-  number = number.to_i.nonzero? || 1
-  number = number > 50 ? 50 : number
+before do
+  headers "X-Author": ENV['AUTHOR']
+  content_type :json
 end
 
-before do
-  content_type :json
+get '/env' do
+  if settings.development?
+    return "dev"
+  elsif settings.production?
+    return "prod"
+  end
 end
 
 get '/?:number?' do
