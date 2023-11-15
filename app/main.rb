@@ -3,6 +3,8 @@ require 'sinatra'
 require_relative './utils/load_data'
 require_relative './utils/validate'
 
+MAX_LAWS = 50
+
 default_headers = {
   "X-Author": ENV['AUTHOR'],
   "X-Robots-Tag": 'noindex'
@@ -19,6 +21,6 @@ before do
 end
 
 get '/?:number?' do
-  number = validate(params[:number])
+  number = validate(params[:number], 1, MAX_LAWS)
   show_laws(number)
 end
