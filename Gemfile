@@ -1,15 +1,17 @@
-source "https://rubygems.org"
-ruby "~> 2.7.x"
+source 'https://rubygems.org'
+ruby '3.2.0'
 
-gem 'sinatra'
-gem 'httparty'
-gem 'puma'
-gem 'json'
 gem 'foreman'
+gem 'httparty'
+gem 'json'
+gem 'puma'
+gem 'sinatra'
 
 group :test, :development do
-  gem 'rspec'
-  gem 'rack-test'
   gem 'pry'
+  gem 'rack-test'
   gem 'rerun'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'ruby-lsp'
 end

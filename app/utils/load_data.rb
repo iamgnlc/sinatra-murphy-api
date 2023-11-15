@@ -2,5 +2,5 @@ require 'json'
 
 def load_data
   data = File.read('./db/data.json')
-  hash = JSON.parse(data)
+  JSON.parse(data)
 end
