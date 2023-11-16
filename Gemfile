@@ -6,6 +6,7 @@ gem 'httparty'
 gem 'json'
 gem 'puma'
 gem 'sinatra'
+gem 'sinatra-health-check'
 
 group :test, :development do
   gem 'pry'
