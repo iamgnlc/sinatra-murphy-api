@@ -4,4 +4,4 @@
 make dev
 ```
 
-https://sinatra-murphy-api.onrender.com/
+https://sinatra.murphy.gnlc.me/
