@@ -8,7 +8,8 @@ MAX_LAWS = 50
 
 default_headers = {
   'X-Author': ENV.fetch('AUTHOR', nil),
-  'X-Robots-Tag': 'noindex'
+  'X-Robots-Tag': 'noindex',
+  'content-type': 'application/json'
 }
 
 def show_laws(number)
@@ -24,7 +25,6 @@ before do
 end
 
 get '/health' do
-  headers 'content-type' => 'application/json'
   @checker.status.to_json
 end
 
